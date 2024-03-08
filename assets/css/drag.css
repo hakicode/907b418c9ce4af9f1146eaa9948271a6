@@ -50,6 +50,11 @@
     margin: 0;
 }
 
+.ondrag-hint p,
+.ondrag-hint span {
+    font-size: 9px !important;
+}
+
 .media1 {
     position: relative;
     overflow: hidden;
@@ -103,4 +108,12 @@
     padding: 4px 6px;
     font-size: 9px;
     line-height: 1;
+}
+
+.hide-selection.ondrop-here {
+    border-color: transparent !important;
+}
+
+.hide-selection input {
+    border-color: transparent !important;
 }

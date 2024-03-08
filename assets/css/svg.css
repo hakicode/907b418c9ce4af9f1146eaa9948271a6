@@ -23,6 +23,10 @@ svg.editor foreignObject>[data-node="test"] {
     border: 1px dashed #be5dba;
 }
 
+svg.viewer .hide-on-viewer {
+    display: none;
+}
+
 svg.viewer foreignObject.interactive-click::after,
 svg.viewer foreignObject.variable-click::after {
     content: '';
