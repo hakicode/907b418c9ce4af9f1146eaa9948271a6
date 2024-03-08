@@ -18,7 +18,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    cursor: no-drop;
+    cursor: url(../../assets/images/svg/icon/drop.png) 0 16,default;
 }
 
 .ondrop-here.focused {
