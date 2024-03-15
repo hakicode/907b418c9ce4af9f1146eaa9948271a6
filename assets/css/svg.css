@@ -40,6 +40,10 @@ svg.viewer foreignObject.variable-click::after {
     cursor: pointer;
 }
 
+svg.viewer foreignObject .ondrag-item {
+    cursor: grab;
+}
+
 svg foreignObject input[type="text"],
 svg foreignObject textarea {
     width: 100%;
