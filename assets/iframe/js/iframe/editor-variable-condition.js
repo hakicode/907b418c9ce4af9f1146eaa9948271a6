@@ -1,5 +1,7 @@
 ﻿var _slides = [];
 
+var _fnRenderComponent = function (slide) { }
+
 var _variables = [];
 
 var _variable = {
@@ -65,10 +67,11 @@ function saveClick() {
     parent.$('#' + ParentViewerId).parents('.editor-iframe-box').find('.btn-save').click();
 }
 
-function valueEditor(data, variables, slides) {
+function valueEditor(data, variables, slides, fnRenderComponent) {
     console.log('data => ', data);
     console.log('variables => ', variables);
     console.log('slides => ', slides);
+    console.log('fnRenderComponent => ', fnRenderComponent);
 
 
     if (variables) {
@@ -77,6 +80,10 @@ function valueEditor(data, variables, slides) {
 
     if (slides) {
         _slides = slides;
+    }
+
+    if (fnRenderComponent) {
+        _fnRenderComponent = fnRenderComponent;
     }
 
     if (data !== undefined) {
@@ -1070,7 +1077,8 @@ function initComboBoxSlide(ebox, idx, idy, prefix) {
 
     options.change = function () {
         //nếu type node, sẽ render node, ko phải type node, sẽ ko có chỗ render
-        initComboBoxNode(ebox, idx, idy, prefix);
+        //initComboBoxNode(ebox, idx, idy, prefix);
+        initChoiceNode(ebox, idx, idy, prefix);
     };
 
     //init
@@ -1124,6 +1132,126 @@ function initComboBoxNode(ebox, idx, idy, prefix) {
 
     //init
     initComboBox(options);
+}
+
+function initChoiceNode(ebox, idx, idy, prefix) {
+    if (window.location.hostname == 'localhost') {
+        //console.log('initComboBoxNode');
+    }
+
+    var options = {
+        ebox: ebox,
+        idx: idx,
+        idy: idy,
+        prefix: prefix,
+        valueField: "node",
+    };
+
+    var assignData = ___data[idx][prefix][idy];
+
+    var thisInputBox = options.ebox.find(`.v-${options.prefix}-${options.valueField}`).empty();
+    if (!thisInputBox.length) {
+        return;
+    }
+
+    //var thisInput = $('<input/>', { style: 'width:100%', class: 'form-control' }).appendTo(thisInputBox);
+
+    var newItem = $(
+        `<div class="input-group">
+                    <input type="text" class="form-control" style="height:32px;"/>
+                    <div class="input-group-btn dropdown">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:32px;height:32px;width:calc(1.4285714286em + 12px);height:calc(1.4285714286em + 12px);padding:6px;line-height:0;"><span class="k-icon k-i-arrow-s k-button-icon"></span></button>
+                    <ul class="dropdown-menu dropdown-menu-right" style="padding:0;">
+                        <li><div class="slide" style="width:768px;max-width:100%;"></div></li>
+                    </ul>
+                    </div>
+                </div>`.replace(/\s+/g, ' ')
+    ).appendTo(thisInputBox);
+
+    var slide = _slides.find(function (f) { return f.id == assignData.slide }) || { svg: { nodes: [] } };
+    var dataNodes = slide.svg.nodes;
+
+    var renderDataDropdown = function () {
+        var svgId = 'svgId';
+        var newItemSvg = $('<svg id="svgId" class="editor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink="http://www.w3.org/1999/xlink" xmlns:html="http://www.w3.org/1999/xhtml" html="http://www.w3.org/1999/xhtml" svg="http://www.w3.org/2000/svg" drawsvg="http://www.drawsvg.org" xml="http://www.w3.org/XML/1998/namespace" mathml="http://www.w3.org/1998/Math/MathML" shape-rendering="geometricPrecision"/>')
+            .attr({
+                'viewBox': `0 0 ${slide.svg.viewBox.width} ${slide.svg.viewBox.height}`
+            })
+            .css({
+                width: '100%'
+            })
+            .appendTo(newItem.find('.slide').empty());
+
+        _fnRenderComponent(slide, svgId, window);
+
+        newItemSvg
+            .on('click', '[id]', function () {
+                var nodeId = $(this).attr('id') || '';
+                if (nodeId) {
+                    newItem.find('input').val(nodeId.replace(new RegExp(`^${svgId}-`), '')).change();
+                }
+            })
+            .on('mouseenter', '[id]', function () {
+                $(this).addClass('actived');
+
+                //
+                newItemSvg.svgNodeShowActive2();
+            })
+            .on('mouseleave', '[id]', function () {
+                $(this).removeClass('actived');
+
+                //
+                newItemSvg.svgNodeShowActive2();
+            });
+
+        if (assignData.node) {
+            newItemSvg.find(`#${svgId}-${assignData.node}`).addClass('selected');
+
+            //
+            newItemSvg.svgNodeShowSelected();
+        }
+    };
+
+    var thisInput = newItem.find('input');
+    //thisInput.val(assignData[options.valueField]);
+    thisInput.change(function () {
+
+        //assignData[options.valueField] = parseInt($(this).val() || '0');
+
+        var inputVal = parseInt($(this).val() || '0');
+        if (dataNodes.filter(function (f) { return f.id == inputVal; }).length) {
+            assignData[options.valueField] = inputVal;
+        }
+        else {
+            assignData[options.valueField] = null;
+            thisInput.val(null);
+        }
+    });
+
+    (function () {
+        //chạy không đồng bộ, sét value input
+        var intervalNodeDatas = setInterval(function () {
+
+            if (!dataNodes) { return; }
+
+            clearInterval(intervalNodeDatas);
+
+            //
+            var inputVal = assignData[options.valueField];
+            if (dataNodes.filter(function (f) { return f.id == inputVal; }).length) {
+                thisInput.val(inputVal);
+            }
+
+        }, 100);
+    })();
+
+    var thisButton = newItem.find('button');
+    thisButton.click(function (event) {
+        event.preventDefault();
+
+        //
+        renderDataDropdown();
+    });
 }
 
 //

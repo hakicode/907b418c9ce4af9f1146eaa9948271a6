@@ -154,7 +154,7 @@
 
     $.fn.svgNodeShowActive = function () {
         let svgs = this,
-            svgNodes = svgs.find('.svg-node.actived');
+            svgNodes = svgs.find('[id].actived');
 
         let g_active = (function () {
             if (svgs.find('g.actives').length > 0) {
@@ -290,7 +290,7 @@
 
     $.fn.svgNodeShowActive2 = function () {
         let svgs = this,
-            svgNodes = svgs.find('.svg-node.actived');
+            svgNodes = svgs.find('[id].actived');
 
         let g_active = (function () {
             if (svgs.find('g.actives').length > 0) {
@@ -382,7 +382,7 @@
 
     $.fn.svgNodeShowSelected= function () {
         let svgs = this,
-            svgNodes = svgs.find('.svg-node.selected');
+            svgNodes = svgs.find('[id].selected');
 
         let g_active = (function () {
             if (svgs.find('g.selects').length > 0) {
