@@ -293,6 +293,8 @@
 	"Selection": "Selection",
 	"SendRequest": "Send request",
 	"SendToBack": "Send to back",
+	"PutAtBottom": "Put at the bottom",
+	"PutOnTop": "Put on top",
 	"SendUsPhotos": "Send us photos",
 	"SetNewPassword": "Set new password",
 	"Shape": "Shape",
