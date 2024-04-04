@@ -449,5 +449,13 @@
 	"ViewMore": "Xem thêm",
 	"GetTheApp": "Tải ứng dụng",
 	"LacVietCompany": "Công ty cổ phần tin học Lạc Việt",
-	"LacVietAddress": "<span class='d-inline-block'>23 Nguyễn Thị Huỳnh,</span> <span class='d-inline-block'>phường 8,</span> <span class='d-inline-block'>quận Phú Nhuận,</span> <span class='d-inline-block'>thành phố Hồ Chí Minh</span>"
+	"LacVietAddress": "<span class='d-inline-block'>23 Nguyễn Thị Huỳnh,</span> <span class='d-inline-block'>phường 8,</span> <span class='d-inline-block'>quận Phú Nhuận,</span> <span class='d-inline-block'>thành phố Hồ Chí Minh</span>",
+	"Introduce": "Giới thiệu",
+	"Comment": "Thảo luận",
+	"Edit": "Chỉnh sửa",
+	"Reply": "Trả lời",
+	"Editor": "Soạn thảo",
+	"EnterComment": "Nhập nội dung thảo luận ...",
+	"NoData": "Chưa có dữ liệu!",
+	"EnterReply": "Nhập nội dung trả lời ..."
 }

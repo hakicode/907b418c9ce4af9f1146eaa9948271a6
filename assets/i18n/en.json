@@ -449,5 +449,13 @@
 	"ViewMore": "View more",
 	"GetTheApp": "Get the app",
 	"LacVietCompany": "Lac Viet Computing Corporation",
-	"LacVietAddress": "<span class='d-inline-block'>23 Nguyen Thi Huynh,</span> <span class='d-inline-block'>ward 8,</span> <span class='d-inline-block'>Phu Nhuan district,</span> <span class='d-inline-block'>Ho Chi Minh city</span>"
+	"LacVietAddress": "<span class='d-inline-block'>23 Nguyen Thi Huynh,</span> <span class='d-inline-block'>ward 8,</span> <span class='d-inline-block'>Phu Nhuan district,</span> <span class='d-inline-block'>Ho Chi Minh city</span>",
+	"Introduce": "Introduce",
+	"Comment": "Comments",
+	"Edit": "Edit",
+	"Reply": "Reply",
+	"Editor": "Editor",
+	"EnterComment": "Enter comment ...",
+	"NoData": "No data!",
+	"EnterReply": "Enter reply ..."
 }
