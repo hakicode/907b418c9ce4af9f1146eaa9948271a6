@@ -84,6 +84,7 @@
 	"CreateImage": "Tạo ảnh",
 	"CreateImageWithAI": "Tạo hình ảnh bằng AI",
 	"CreateLecture": "Tạo bài giảng",
+	"EditLectureContent": "Soạn thảo nội dung",
 	"CreateLectureWithAI": "Tạo nội dung bài giảng bằng công nghệ AI",
 	"CreateNew": "Tạo mới",
 	"CreateSimilarImagesWithAI": "AI - Tạo ảnh tương đồng",
@@ -457,5 +458,6 @@
 	"Editor": "Soạn thảo",
 	"EnterComment": "Nhập nội dung thảo luận ...",
 	"NoData": "Chưa có dữ liệu!",
-	"EnterReply": "Nhập nội dung trả lời ..."
+	"EnterReply": "Nhập nội dung trả lời ...",
+	"ViewDetail": "Xem chi tiết"
 }
