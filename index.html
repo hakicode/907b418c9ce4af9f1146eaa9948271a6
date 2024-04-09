@@ -71,6 +71,30 @@
 
   <!--pace-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@latest/pace-theme-default.min.css" async>
+  <style>
+    .pace {
+      -webkit-pointer-events: none;
+      pointer-events: none;
+
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    .pace-inactive {
+      display: none;
+    }
+
+    .pace .pace-progress {
+      background: #37bc9b;
+      position: fixed;
+      z-index: 2000;
+      top: 0;
+      right: 100%;
+      width: 100%;
+      height: 2px;
+    }
+  </style>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js" async></script>
 
   <!--font-->
@@ -116,6 +140,6 @@
 <body>
   <app-root></app-root>
   <noscript>Please enable JavaScript to continue using this application.</noscript>
-<script src="runtime.af1f33293bf34da8.js" type="module"></script><script src="polyfills.441dd4ca9dc0674f.js" type="module"></script><script src="scripts.f5210ac373583574.js" defer></script><script src="main.2724e036e48958bf.js" type="module"></script></body>
+<script src="runtime.528809a80ace8e33.js" type="module"></script><script src="polyfills.441dd4ca9dc0674f.js" type="module"></script><script src="scripts.f5210ac373583574.js" defer></script><script src="main.64ef7653ca1c0b2a.js" type="module"></script></body>
 
 </html>

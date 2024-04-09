@@ -337,7 +337,7 @@
 	"Sound": "Phát âm thanh",
 	"Special": "Đặc biệt",
 	"Status": "Trạng thái",
-	"StopSound": "Ngừng phát âm thanh",
+	"StopSound": "Dừng",
 	"Stroke": "Viền",
 	"StrokeColor": "Màu viền",
 	"StrokeWidth": "Độ dày viền",
@@ -459,5 +459,6 @@
 	"EnterComment": "Nhập nội dung thảo luận ...",
 	"NoData": "Chưa có dữ liệu!",
 	"EnterReply": "Nhập nội dung trả lời ...",
-	"ViewDetail": "Xem chi tiết"
+	"ViewDetail": "Xem chi tiết",
+	"JoinBoards": "Ghép bài"
 }

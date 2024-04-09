@@ -337,7 +337,7 @@
 	"Sound": "Sound",
 	"Special": "Special",
 	"Status": "Status",
-	"StopSound": "Stop sound",
+	"StopSound": "Stop",
 	"Stroke": "Stroke",
 	"StrokeColor": "Stroke color",
 	"StrokeWidth": "Stroke thickness",
@@ -459,5 +459,6 @@
 	"EnterComment": "Enter comment ...",
 	"NoData": "No data!",
 	"EnterReply": "Enter reply ...",
-	"ViewDetail": "View detail"
+	"ViewDetail": "View detail",
+	"JoinBoards": "Join lectures"
 }
